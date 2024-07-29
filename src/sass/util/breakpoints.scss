@@ -1,0 +1,35 @@
+@use './counting.scss' as count;
+
+// Define breakpoints
+$breakpoints-up: (
+    'tiny': count.em(400),
+    'small': count.em(576),
+    'medium': count.em(768),
+    'large': count.em(1024),
+    'xlarge': count.em(1200)
+);
+
+
+@mixin breakpoint($size) {
+
+    @media (max-width: map-get($breakpoints-up, $size)){
+
+        @content;
+    }
+}
+
+@mixin breakpointMin($size) {
+
+    @media (min-width: map-get($breakpoints-up, $size)){
+
+        @content;
+    }
+}
+
+@mixin breakpointAny($size) {
+
+    @media (max-width: $size){
+
+        @content;
+    }
+}

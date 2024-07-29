@@ -1,0 +1,55 @@
+
+.swiper-wrapper {
+    display: flex;
+}
+
+.products__slider {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+.slider {
+    width: 100%;
+}
+
+.custom__nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    padding: 11px;
+
+    background-color: var(--ui-white);
+    border-radius: 32px;
+
+    z-index: 2;
+    @media (max-width: 500px) {
+        display: none;
+    }
+}
+
+.custom__nav::before {
+    content: url('./../images/icons/next-btn.svg');
+
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+}
+
+.custom-next {
+    right: 0;
+    top: 50%;
+    transform: translate(50%, -50%);
+}
+
+.custom-prev {
+    left: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.custom-next.custom__nav::before {
+    transform: rotate(180deg);
+}

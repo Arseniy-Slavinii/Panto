@@ -1,0 +1,73 @@
+@use '../util/counting.scss' as count;
+@use '../util/breakpoints.scss' as breakpoint;
+
+.header-content {
+    padding-top: 46px;
+    text-align: center;
+}
+.header-content__title {
+    max-height: 208px;
+    height: 100%;
+    max-width: 860px;
+    width: 100%;
+    padding: 0 20px 14px;
+
+    font-size: clamp(25px, 18px + 3vw, 80px);
+    // line-height: 104px;
+
+
+    margin: 0 auto;
+}
+.header-content__text {
+    display: inline-block;
+    padding-bottom: 45px;
+
+    font-size: clamp(15px, 8px + 1vw, 24px);
+    opacity: .8;
+
+    max-width: 600px;
+}
+.header__form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding-right: 8px;
+
+    max-width: 344px;
+    width: 100%;
+
+    backdrop-filter: blur(8px);
+    border-radius: 45px;
+    background: rgba(255, 255, 255, 0.15);
+    @include breakpoint.breakpoint('medium') {
+        display: none;
+    }
+    
+}
+.header__form-input {
+    padding: 15px 20px;
+    
+    color: var(--text-white);
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    background: transparent;
+
+    &::placeholder {
+        font-size: count.rem(18);
+        line-height: 27px;
+        color: rgba(255, 255, 255, .8);
+        font-weight: 400;
+    }
+}
+.header__form-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 40px;
+    width: 40px;
+    background-color: var(--accent);
+    border-radius: 50px;
+}

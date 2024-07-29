@@ -1,0 +1,66 @@
+@use "../util/counting.scss" as count;
+@use "../util/breakpoints.scss" as breakpoint;
+
+.products {
+    padding: 50px 20px;
+    background-color: var(--bg-gray);
+}
+
+.products__title {
+    padding-bottom: 32px;
+
+    font-weight: 700;
+    font-size: count.rem(42);
+    line-height: 49.22px;
+    text-align: center;
+
+}
+.product__options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 92px;
+    padding: 6px;
+    
+    border-radius: 32px;
+    background-color: var(--ui-gray);
+    max-width: 365px;
+    width: 100%;
+    @media (max-width: 500px) {
+        margin-bottom: 60px;
+    }
+}
+
+.product__options-item {
+    font-size: count.rem(18);
+    line-height: 34px;
+    opacity: .8;
+    padding: 7px 20px;
+    transition: all .1s ease;
+    &--active {
+        border-radius: 32px;
+        background-color: #ffffff;
+    }
+    @include breakpoint.breakpoint('tiny') {
+        padding: 3px 9px;
+        font-size: 1rem;
+    }
+}
+
+.product__item {
+    display: flex;
+}
+
+.products__link {
+    margin: 0 auto;
+    margin-top: 60px;
+    @media (max-width: 500px) {
+        margin-top: 30px;
+    }
+}
+
+.products__slider {
+    display: flex;
+    justify-content: center;
+}

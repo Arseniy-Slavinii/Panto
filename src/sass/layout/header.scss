@@ -1,0 +1,63 @@
+@use '../util/breakpoints' as u;
+
+.header {
+    position: relative;
+    color: var(--text-white);
+    background-image: url(../images/main-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    aspect-ratio: 1440/1084;
+    @include u.breakpoint(xlarge) {
+
+        background-image: url(../images/main-bg-2.jpg);
+    }
+    a {
+        color: var(--text-white);
+    }
+    @include u.breakpoint('medium') {
+        aspect-ratio: auto;
+        background-size: cover;
+        height: 100vh;
+    }
+}
+
+.header.header--active .nav-list {
+    position: absolute;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    z-index: 10;
+    left: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.header__dot-sofa {
+    position: absolute;
+    top: calc(680 * 100% / ( 1084 - 9 ));
+    left: calc(290 * 100% / ( 1440 - 30 ));
+}
+
+.header__dot-vase {
+    position: absolute;
+    top: calc(748 * 100% / 1084);
+    left: calc(108 * 100% / 1440);
+}
+.header__dot-item {
+    position: absolute;
+    top: calc(782 * 100% / 1084);
+    left: calc(805 * 100% / 1440);
+}
+.header__dot-wall {
+    position: absolute;
+    top: calc(816 * 100% / 1084);
+    left: calc(1376 * 100% / 1440);
+}
+
+@include u.breakpoint('large') {
+    .dot {
+        display: none;
+    }
+}

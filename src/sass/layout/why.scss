@@ -1,0 +1,35 @@
+@use '../util/counting.scss' as count;
+
+.why {
+    padding: 120px 0;
+}
+.why__title {
+    font-size: count.rem(42);
+    font-weight: 700;
+    line-height: 49.22px;
+    width: 243px;
+}
+.reason__title {
+    font-size: count.rem(24);
+    font-weight: 700;
+    color: rgba($color: var(--text-color), $alpha: .9);
+    padding-bottom: 20px;
+}
+.reason__text {
+    padding-bottom: 14px;
+    line-height: 30px;
+}
+.reason__link {
+    font-weight: 500;
+    font-size: count.rem(14);
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 13px;
+}
+
+.reason__link::after {
+    content: url(./../images/icons/grommet-icons_form-next-link.svg);
+    width: 48px;
+    height: 24px;
+}

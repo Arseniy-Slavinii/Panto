@@ -1,0 +1,89 @@
+@use '../util/counting.scss' as count;
+@use '../util/breakpoints.scss' as breakpoint;
+
+.nav {
+    display: grid;
+    grid-template-columns: 2fr 8fr 2fr;
+    gap: 20px;
+    padding: 40px;
+}
+
+.nav-list {
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 65px;
+    font-weight: 500;
+    font-size: count.rem(18);
+}
+
+#nav__btn {
+    height: 34px;
+    width: 34px;
+    z-index: 20;
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+
+.logo {
+    justify-self: start;
+    align-self: center;
+    font-family: Gilroy-Bold;
+    font-size: count.rem(28);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    @include breakpoint.breakpoint('medium') {
+        display: none;
+    }
+}
+
+.nav__menu-btn {
+    z-index: 20;
+    order: -1;
+    @media (min-width: 900px) {
+        display: none;
+    }
+}
+
+
+.cart {
+    align-self: center;
+    justify-self: end;
+    position: relative;
+    cursor: pointer;
+    z-index: 20;
+    @include breakpoint.breakpoint('medium') {
+        margin-left: auto;
+    }
+}
+
+.cart__count {
+    display: inline-block;
+    height: 25px;
+    position: absolute;
+    right: -6px;
+    top: 2px;
+    
+    background-color: var(--accent);
+    line-height: 25px;
+    font-weight: 700;
+    border-radius: 40px;
+    padding: 0 6px;
+    font-family: var(--font-card);
+}
+
+@media (max-width: 900px) {
+    .nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav-list {
+        display: none;
+    }
+}

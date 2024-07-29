@@ -1,0 +1,71 @@
+@use '../util/counting.scss' as count;
+@use '../util/breakpoints.scss' as breakpoints;
+
+.footer {
+    padding: 118px 10px 56px;
+    color: var(--text-white);
+    background-color: #2D2F33;
+    font-size: count.rem(15);
+}
+
+.row__main {
+    padding-bottom: 118px;
+}
+
+.footer__main {
+    padding-bottom: 30px;
+}
+
+.footer__text {
+    font-weight: 500;
+    padding-top: 29px;
+    max-width: 650px;
+    width: 100%;
+
+}
+.footer__nav-title {
+    padding-bottom: 20px;
+    font-weight: 400;
+
+    color: var(--accent);
+    font-size: count.rem(17);
+    @include breakpoints.breakpointMin('large') {
+        padding-top: 10px;
+    }
+}
+.footer__list-link {
+    font-weight: 500;
+}
+
+.footer__list-item {
+    padding-bottom: 16px;
+}
+
+.general {
+    display: flex;
+    justify-content: end;
+    gap: 40px;
+    padding-right: 55px;
+}
+
+.copy {
+    opacity: 50%;
+}
+
+@include breakpoints.breakpoint('medium') {
+    .row__main {
+        padding-bottom: 30px;
+    }
+    .footer__nav {
+        padding-bottom: 20px;
+        
+    }
+    .footer {
+        padding-top: 20px;
+    }
+    .general {
+        padding-right: 0;
+        gap: 30px;
+        justify-content: start;
+    }
+}
